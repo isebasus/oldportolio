@@ -7,7 +7,10 @@ function App() {
       <header className="body">
         <div className="container">
           <p>
-            Hello there, my name is Sebastian. Nice to meet you.
+            <span className="first">Hello there,</span>
+            <span className="second"> my name is</span>
+            <span className="third"> Sebastian.</span>
+            <span className="fourth"> Nice to meet you.</span>
           </p>
         </div>
       </header>

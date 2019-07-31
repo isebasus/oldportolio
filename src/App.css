@@ -8,10 +8,13 @@
   background-color: #F1F1F1;
   width: 100%;
   height: 100vh;
+  display: grid;
 }
 
 .container{
   margin: auto;
+  padding-bottom: 150px;
+  
 }
 
 p{
@@ -22,14 +25,51 @@ p{
   text-align: center;
   padding-bottom: 30px;
   margin: 0px;
-  animation: zoom 1s;
   user-select: none;
 }
 
-@media(max-width : 768px)
+.first{
+  font-weight: 700;
+  animation: fade_up 1s ease-in forwards;
+}
+
+.second{
+  visibility: hidden;
+  animation: fade_up 1s ease-in forwards;
+  animation-delay: 1s;
+  
+}
+
+.third{
+  visibility: hidden;
+  animation: fade_up 2s ease-in forwards;
+  animation-delay: 2s;
+  
+}
+
+.fourth{
+  visibility: hidden;
+  animation: fade_up 1s ease-in forwards;
+  animation-delay: 3s;
+}
+
+@media(max-width : 800px)
 {
   p
   {
     font-size: 7vh;
+  }
+}
+
+@keyframes fade_up {
+  0% { 
+      transform: translateY(7px);
+      opacity: 0.0;
+      visibility: visible;
+  } 
+  100% {
+      transform: translateY(0px);
+      opacity: 1.0;
+      visibility: visible;
   }
 }

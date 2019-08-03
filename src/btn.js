@@ -1,33 +1,25 @@
 import React, { Component } from 'react';
 import injectSheet from 'react-jss';
+import {StyleSheet, Text, View,} from 'react-native';
 import {render} from 'react-dom'
-import GradientButton from 'react-linear-gradient-button';
+import LinearGradient  from 'react-linear-gradient-button';
 
 const styles = {
-    myButton: {
-        color: 'green',
-        margin: {
-          // jss-expand gives more readable syntax
-          top: 5, // jss-default-unit makes this 5px
-          right: 0,
-          bottom: 0,
-          left: '1rem'
-        },
-        '& span': {
-          // jss-nested applies this to a child span
-          fontWeight: 'bold' // jss-camel-case turns this into 'font-weight'
-        }
+    container: {
+        flex: 1,
+        background: 'linear-gradient(to right, #0cebeb, #20e3b2, #29ffc6)',
     },
-    myLabel: {
-        fontStyle: 'italic'
-    }
+
 }
 
 
 const Button = ({classes, children}) => (
-    <button className={classes.myButton}>
-      <span className={classes.myLabel}>{children}</span>
-    </button>
+    <LinearGradient 
+     colors={['#00F260', '#0575E6']}
+     style = { styles.container }>
+     
+        <p className="gradientBtn">projects</p>
+    </LinearGradient>
 )
 
 const StyledButton = injectSheet(styles)(Button)

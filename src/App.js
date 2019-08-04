@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {Component} from 'react';
+import StyledButton from './btn';
 import './App.css';
 
 function App() {
@@ -7,11 +8,12 @@ function App() {
       <header className="body">
         <div className="container">
           <p>
-            <span className="first">Hello there,</span>
-            <span className="second"> my name is</span>
+            <span className="first">Hello there.</span>
+            <span className="second"> I'm a human named</span>
             <span className="third"> Sebastian.</span>
             <span className="fourth"> Nice to meet you.</span>
           </p>
+        <StyledButton>Submit</StyledButton>
         </div>
       </header>
     </div>

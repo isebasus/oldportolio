@@ -1,56 +1,66 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700');
 
+*:focus{
+  outline: none;
+}
+
 .App {
   text-align: center;
+}
+
+.font{
+  font-family: 'Roboto Mono', monospace;
 }
 
 .body{
   background-color: #F1F1F1;
   width: 100%;
   height: 100vh;
+  overflow: hidden;
   display: grid;
 }
 
 .container{
   margin: auto;
-  padding-bottom: 150px;
+  padding-bottom: 0px;
   
 }
 
 p{
   color: #000000;
   font-family: 'Roboto Mono', monospace;
-  font-size: 96px;
+  font-size: 86px;
   font-weight: 700;
   text-align: center;
-  padding-bottom: 30px;
+  padding-bottom: 80px;
   margin: 0px;
   user-select: none;
 }
 
 .first{
-  font-weight: 700;
-  animation: fade_up 1s ease-in forwards;
+  visibility: hidden;
+  animation: fade_up 0.5s ease-in forwards;
+  animation-delay: 0.3s;
 }
 
 .second{
   visibility: hidden;
-  animation: fade_up 1s ease-in forwards;
-  animation-delay: 1s;
+  animation: fade_up 0.5s ease-in forwards;
+  animation-delay: 1.3s;
   
 }
 
 .third{
   visibility: hidden;
-  animation: fade_up 2s ease-in forwards;
-  animation-delay: 2s;
+  animation: fade_up 0.5s ease-in forwards;
+  animation-delay: 1.8s;
   
 }
 
 .fourth{
   visibility: hidden;
-  animation: fade_up 1s ease-in forwards;
-  animation-delay: 3s;
+  animation: fade_up 0.5s ease-in forwards;
+  animation-delay: 2.8s;
 }
 
 @media(max-width : 800px)

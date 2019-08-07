@@ -11,7 +11,10 @@ const styles = {
         fontSize: '30px',
         fontWeight: 700,
         boxShadow: '0px 5px 10px rgba(0, 0, 0, 0.1)',
-        animation: 'zoom 1s ease-in forwards',
+
+    },
+    buttonAnimation: {
+        animation: 'fade_up 1s ease-in forwards',
         animationDelay: '3.8s',
         visibility: 'hidden',
     },
@@ -25,16 +28,16 @@ const styles = {
             transform: 'translateY(0px)',
             opacity: 1.0,
             visibility: 'visible',
-        }
-    }
+        },
+    },
 
 }
 
 
 const Button = ({classes, children}) => {
     return(
-        <div style = { styles.buttonLocation }>
-            <input className="font" style = { styles.button } value="View Projects" type="button"></input>
+        <div style = { styles.buttonAnimation }>
+            <button className="font" style = { styles.button } type="button">View Projects</button>
         </div>
     )
 }

@@ -13,7 +13,7 @@ function App() {
             <span className="third"> Sebastian.</span>
             <span className="fourth"> Nice to meet you.</span>
           </p>
-        <StyledButton>Submit</StyledButton>
+          <StyledButton></StyledButton>
         </div>
       </header>
     </div>

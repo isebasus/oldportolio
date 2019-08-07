@@ -10,6 +10,13 @@
 
 .font{
   font-family: 'Roboto Mono', monospace;
+  transition: transform .3s; 
+}
+
+.font:hover {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .body{
@@ -83,3 +90,4 @@ p{
       visibility: visible;
   }
 }
+

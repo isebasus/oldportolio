@@ -1,20 +1,26 @@
 import React, {Component} from 'react';
 import StyledButton from './components/btn.jsx';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Route, Switch, Link } from "react-router-dom";
 import './App.css';
+import { tsConstructorType } from '@babel/types';
 
 function App() {
   return (
     <Router>
        <div className="App">
+        <Switch>
           <Route exact path="/" component={Home}/>
-          <Route path="/portfolio" component={Portfolio}/>
+          <Route path={"/portfolio"} component={Portfolio}/>
+        </Switch>
       </div>
     </Router>
   );
 }
 
-function Home(){
+class Home extends React.Component{
+
+
+  render(){
   return (
     <header className="body">
       <div className="container">
@@ -24,16 +30,20 @@ function Home(){
           <span className="third"> Sebastian.</span>
           <span className="fourth"> Nice to meet you.</span>
         </p>
-          <StyledButton></StyledButton>
+          <div className="buttonAnimation">
+            <Link className="button" to="portfolio">View Portfolio</Link>
+          </div>
       </div>
     </header>
-  )
+  );
+  }
 }
 
-function Portfolio(){
-  return(
-    <p>hello</p>
-  )
+function Portfolio() {
+  return (
+    <div>
+      <h3>hello</h3>
+    </div>
+  );
 }
-
 export default App;

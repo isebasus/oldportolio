@@ -8,16 +8,55 @@
   text-align: center;
 }
 
-.font{
+.button {
+  background: linear-gradient(to right, #0cebeb, #20e3b2, #29ffc6);
+  color: #F1F1F1;
+  padding: 1.5rem 2rem;
+  border-radius: 100px;
+  border: 0px;
+  font-size: 30px;
+  font-weight: 700;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
   font-family: 'Roboto Mono', monospace;
-  transition: transform .3s; 
+  transition: transform .1s; 
+  user-select: none;
+  text-decoration: none;
+  animation: show 1s infinite;
+  animation-delay: 3.8s;
 }
 
-.font:hover {
-  -webkit-transform: scale(1.05);
-  -ms-transform: scale(1.05);
-  transform: scale(1.05);
+/*.button:hover{
+  -webkit-transform: translateY(-3px);
+  -ms-transform: translateY(-3px);
+  transform: translateY(-3px);
 }
+
+.button:active{
+  transform: translateY(2px);
+}
+*/
+
+.wrapper{
+  transition: transform .1s;
+  visibility: hidden;
+}
+
+.wrapper:hover{
+  -webkit-transform: translateY(-3px);
+  -ms-transform: translateY(-3px);
+  transform: translateY(-3px);
+}
+
+.wrapper:active{
+  transform: translateY(2px);
+}
+
+.buttonAnimation {
+  visibility: hidden;
+  animation: fade_up 1s ease-in forwards;
+  animation-delay: 3.8s;
+}
+
 
 .body{
   background-color: #F1F1F1;
@@ -91,3 +130,11 @@ p{
   }
 }
 
+@keyframes show{
+  0% {
+    visibility: visible;
+  }
+  100% {
+    visibility: visible;
+  }
+}

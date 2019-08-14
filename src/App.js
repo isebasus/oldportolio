@@ -19,7 +19,6 @@ function App() {
 
 class Home extends React.Component{
 
-
   render(){
   return (
     <header className="body">
@@ -31,7 +30,9 @@ class Home extends React.Component{
           <span className="fourth"> Nice to meet you.</span>
         </p>
           <div className="buttonAnimation">
-            <Link className="button" to="portfolio">View Portfolio</Link>
+            <button className="wrapper" type="button">
+              <Link className="button" to="portfolio">view portfolio</Link>
+            </button>
           </div>
       </div>
     </header>
@@ -41,9 +42,7 @@ class Home extends React.Component{
 
 function Portfolio() {
   return (
-    <div>
-      <h3>hello</h3>
-    </div>
+    
   );
 }
 export default App;

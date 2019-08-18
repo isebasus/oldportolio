@@ -2,15 +2,24 @@ import React, { Component } from 'react';
 import injectSheet from 'react-jss';
 
 const styles = {
+    box: {
+        top: '100px',
+        width: '450px',
+        height: '300px',
+        background:'white',
+        borderRadius: '10px',
+        margin: '40px 0px',
+    },
+};
 
-}
-
-const container = ({ }) => {
+const container = ({}) => {
     return(
-        <div></div>
+        <div style = { styles.box }>
+            <p>helllleo</p>
+        </div>
     )
 };
 
-const projectContainer = injectSheet(styles)(container)
+const Container = injectSheet(styles)(container);
 
-export default projectContainer;
+export default Container;

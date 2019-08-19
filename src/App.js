@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import StyledButton from './components/btn.jsx';
 import Header, {title} from './components/header.jsx';
-import Container from './components/projectContainers.jsx';
+import Container, {header} from './components/projectContainers.jsx';
 import { HashRouter as Router, Route, Switch, Link } from "react-router-dom";
 import './App.css';
 import { tsConstructorType } from '@babel/types';
@@ -49,7 +49,7 @@ function Portfolio() {
         <div className="title">
           <Header title="Projects"></Header>
         </div>
-        <Container></Container>
+        <Container header="Qwerty"></Container>
       </div>
     </header>
   );

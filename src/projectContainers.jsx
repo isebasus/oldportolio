@@ -3,19 +3,24 @@ import injectSheet from 'react-jss';
 
 const styles = {
     box: {
-        top: '100px',
-        width: '450px',
-        height: '300px',
-        background:'white',
-        borderRadius: '10px',
-        margin: '40px 0px',
+        marginTop: '14.5%',
     },
+    test: {
+        textAlign: 'left',
+        fontSize: '150px',
+        fontWeight: '700'
+    },
+    '@media (max-width: 800px': {
+        test:{
+            fontSize: '7vw',
+        }
+    }
 };
 
-const container = ({}) => {
+const container = ({ header }) => {
     return(
         <div style = { styles.box }>
-            <p>helllleo</p>
+            <p className="header">{ header }</p>
         </div>
     )
 };

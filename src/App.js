@@ -47,7 +47,7 @@ function Portfolio() {
     <header className="portfolio">
       <div className="projects">
         <div className="title">
-          <Header title="Projects"></Header>
+          <Header title="SEBASTIAN CARBONERO"></Header>
         </div>
         <Container header="Qwerty"></Container>
       </div>

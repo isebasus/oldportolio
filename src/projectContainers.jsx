@@ -5,22 +5,23 @@ const styles = {
     box: {
         marginTop: '14.5%',
     },
-    test: {
-        textAlign: 'left',
-        fontSize: '150px',
-        fontWeight: '700'
+    caption:{
+        marginTop: '-75px',
     },
-    '@media (max-width: 800px': {
-        test:{
-            fontSize: '7vw',
-        }
+    header: {
+        marginLeft: 0,
     }
 };
 
-const container = ({ header }) => {
+const container = ({ header, caption}) => {
     return(
         <div style = { styles.box }>
-            <p className="header">{ header }</p>
+            <div style = { styles.header }>
+                <p className="header">{ header }</p>
+            </div>
+            <div className="caption" style = {styles.caption}>
+                {caption}
+            </div>
         </div>
     )
 };

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import StyledButton from './components/btn.jsx';
+import StyledButton from './components/button.jsx';
 import Header, {title} from './components/header.jsx';
 import Container, {header} from './components/projectContainers.jsx';
 import { HashRouter as Router, Route, Switch, Link } from "react-router-dom";
@@ -47,9 +47,16 @@ function Portfolio() {
     <header className="portfolio">
       <div className="projects">
         <div className="title">
-          <Header title="SEBASTIAN CARBONERO"></Header>
+          <Header title="Portfolio"></Header>
+          <StyledButton subject="Back to home page" link="/"></StyledButton>
+          <h2 className="headerproject">Projects</h2>
+          <p className="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac nunc non nulla ornare tristique.</p>
         </div>
-        <Container header="Qwerty"></Container>
+        <div className="positioning">
+          <Container header="Qwerty" caption="A web proxy built for a more open web. Lorem ipsum dolor sit amet, consectetur adipiscing elit."></Container>
+          <Container header="Video Scraper" caption="A web scraper that uses Youtube's API to retrieve the video."></Container>
+          <Container header ="isebas.us" caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. That this is the most academical thing."></Container>
+        </div>
       </div>
     </header>
   );

@@ -28,6 +28,16 @@
   animation-delay: 3.8s;
 }
 
+.homebutton{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    padding: 1rem 1.5rem;
+}
+
+.buttoncontainer{
+  margin-top: -40px;
+}
+
 .wrapper{
   transition: transform .1s;
   visibility: hidden;
@@ -66,16 +76,31 @@
 }
 
 .header{
+  font-family: 'Playfair Display', serif;
   text-align: left;
-  font-size: 150px;
+  font-size: 10vw;
+  line-height: 100%;
+  font-stretch: expanded;
+  width: 700px;
+
+
+}
+
+.caption{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.38vw;
   font-weight: 700;
+  line-height: 150%;
+  text-align: left;
+  margin-top: 1vw;
+  width: 40vw;
 }
 
 .projects{
   margin: 0 auto;
   width: 1300px;
   height: 2000px;
-  padding-left: 15px;
+  padding-left: 0px;
   padding-top: 25px;
   animation: float_up 0.6s forwards; 
 }
@@ -87,15 +112,54 @@
 }
 
 .projectHeader{
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto Mono', monospace;
   text-align: left;
-  font-size: .83vw;
-  letter-spacing: 0.05vw;
-  text-transform: uppercase;
+  font-size: 2.25vw;
   font-weight: 700;
+  margin-left: 10px;
+}
+
+.description{
+  text-align: left;
+  font-size: .85vw;
+  font-family: 'Montserrat', sans-serif;
+  margin-left: 10px;
+  margin-top: 20px;
+  font-weight: normal;
+
+}
+
+.positioning{
+  margin-top: -180px;
 }
 
 p{
+  color: #000000;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 86px;
+  font-weight: 700;
+  text-align: center;
+  padding-bottom: 80px;
+  margin: 0px;
+  user-select: none;
+}
+
+.headerproject{
+  margin-left: 10px;
+  margin-top: 35px;
+}
+
+h2{
+  text-align: left;
+  color: #000000;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.5vw;
+  font-weight: 700;
+  margin: 0px;
+  user-select: none;
+}
+
+h1{
   color: #000000;
   font-family: 'Roboto Mono', monospace;
   font-size: 86px;
@@ -143,20 +207,87 @@ p{
 
 @media(max-width : 1300px)
 {
+
+  .homebutton{
+    font-size: 15px;
+  }
+
   .projects{
     width: 100%;
+    padding-left: 50px;
   }
+  
+  .header{
+    width:200px;
+  }
+
 }
 
 @media only screen and (max-width: 1024px){
+  .caption{
+    font-size: 2vmax;
+    margin-left: 0px;
+    width: 85vw;
+  }
+  .headerproject{
+    margin-top: 20px;
+    font-size: 2vmax;
+  }
+
+  .positioning{
+    margin-top: -100px;
+  }
+
+  .description{
+    margin-top: 10px;
+    font-size:  1.3vmax;
+  }
+
   .projectHeader{
-    font-size: 1.5vmax;
+    font-size: 2.5vmax;
+  }
+
+  .homebutton{
+    font-size: 1.15vmax;
+    padding: 0.5rem 1rem;
+  }
+
+  .buttoncontainer{
+    margin-top: -65px;
+  }
+
+  .header{
+    font-size: 75px;
   }
 }
 
 @media only screen and (max-width: 480px){
+  .caption{
+    margin-left: 0px;
+    width: 300px;
+  }
+
+  .description{
+    width: 300px;
+  }
+
   .projectHeader{
-    font-size: 1.75vmax;
+    font-size: 2.5vmax;
+  }
+  .header{
+    font-size: 60px;
+  }
+}
+
+@media only screen and (max-width: 350px){
+  .projects{
+    margin-left: -20px
+  }
+  .caption{
+    width: 270px;
+  }
+  .description{
+    width: 270px;
   }
 }
 

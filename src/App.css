@@ -5,27 +5,15 @@
 
 *:focus{
   outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none
 }
 
 .App {
   text-align: center;
-}
-
-.button {
-  background: linear-gradient(to right, #0cebeb, #20e3b2, #29ffc6);
-  color: #F1F1F1;
-  padding: 1.5rem 2rem;
-  border-radius: 100px;
-  border: 0px;
-  font-size: 30px;
-  font-weight: 700;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-  font-family: 'Roboto Mono', monospace;
-  transition: transform .1s; 
-  user-select: none;
-  text-decoration: none;
-  animation: show 1s infinite;
-  animation-delay: 3.8s;
 }
 
 .homebutton{
@@ -38,18 +26,38 @@
   margin-top: -40px;
 }
 
-.wrapper{
+.button{
   transition: transform .1s;
   visibility: hidden;
+  border-width: initial;
+  border-style: none;
+  border-color: initial;
+  border-image: initial;
+  -webkit-appearance: button;
+  background: linear-gradient(to right, #0cebeb, #20e3b2, #29ffc6);
+  color: #F1F1F1;
+  padding: 1.5rem 2rem !important;
+  border-radius: 100px !important;
+  border: 0px;
+  font-size: 30px;
+  font-weight: 700;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto Mono', monospace;
+  transition: transform .1s; 
+  user-select: none;
+  text-decoration: none;
+  animation: show 1s infinite;
+  animation-delay: 3.8s;
+  -webkit-font-smoothing: antialiased;
 }
 
-.wrapper:hover{
+.button:hover{
   -webkit-transform: translateY(-3px);
   -ms-transform: translateY(-3px);
   transform: translateY(-3px);
 }
 
-.wrapper:active{
+.button:active{
   transform: translateY(2px);
 }
 
@@ -57,6 +65,7 @@
   visibility: hidden;
   animation: fade_up 1s ease-in forwards;
   animation-delay: 3.8s;
+  visibility: hidden;
 }
 
 
@@ -83,7 +92,10 @@
   font-stretch: expanded;
   width: 700px;
 
+}
 
+.buttonlocation{
+  margin-top: -150px;
 }
 
 .caption{
@@ -92,16 +104,18 @@
   font-weight: 700;
   line-height: 150%;
   text-align: left;
-  margin-top: 1vw;
+  margin-top: 50px;
+  margin-left: 16%;
   width: 40vw;
 }
 
 .projects{
   margin: 0 auto;
-  width: 1300px;
+  width: 100%;
   height: 2000px;
   padding-left: 0px;
   padding-top: 25px;
+  margin-left: 15%;
   animation: float_up 0.6s forwards; 
 }
 
@@ -109,6 +123,18 @@
   margin: auto;
   padding-bottom: 0px;
   
+}
+
+.projectbutton{
+  padding: 1vw 1.5vw;
+  font-size: .84vw;
+  display: inline-block;
+}
+
+.responsivebutton{
+  padding: 1vw 1.5vw;
+  font-size: .84vw;
+  display: none;
 }
 
 .projectHeader{
@@ -126,11 +152,12 @@
   margin-left: 10px;
   margin-top: 20px;
   font-weight: normal;
+  width: 55vw;
 
 }
 
 .positioning{
-  margin-top: -180px;
+  margin-top: -100px;
 }
 
 p{
@@ -142,6 +169,10 @@ p{
   padding-bottom: 80px;
   margin: 0px;
   user-select: none;
+}
+
+.projectcontainer{
+  margin-top: 7%;
 }
 
 .headerproject{
@@ -214,7 +245,7 @@ h1{
 
   .projects{
     width: 100%;
-    padding-left: 50px;
+    margin-left: 12%;
   }
   
   .header{
@@ -224,10 +255,24 @@ h1{
 }
 
 @media only screen and (max-width: 1024px){
+  .description{
+    width: 85vw;
+  }
+
+  .buttonlocation{
+    margin-top: -150px;
+  }
+
   .caption{
     font-size: 2vmax;
     margin-left: 0px;
     width: 85vw;
+    margin-top: 85px;
+    margin-bottom: -50px;
+  }
+
+  .projectcontainer{
+    margin-top: 20%;
   }
   .headerproject{
     margin-top: 20px;
@@ -235,7 +280,7 @@ h1{
   }
 
   .positioning{
-    margin-top: -100px;
+    margin-top: -115px;
   }
 
   .description{
@@ -243,8 +288,24 @@ h1{
     font-size:  1.3vmax;
   }
 
+  .projectbutton{
+    font-size: 1.2vmax;
+    padding: 1rem 1.5rem;
+    display: none;
+  }
+
+  .responsivebutton{
+    font-size: 1.2vmax;
+    padding: 1rem 1.5rem;
+    display: block;
+  }
+
   .projectHeader{
     font-size: 2.5vmax;
+  }
+
+  .prjects{
+    margin-left: 5%;
   }
 
   .homebutton{
@@ -276,6 +337,10 @@ h1{
   }
   .header{
     font-size: 60px;
+  }
+
+  .responsivebutton{
+    padding: .6rem 1rem;
   }
 }
 
@@ -310,6 +375,15 @@ h1{
   }
   100% {
     visibility: visible;
+  }
+}
+
+@keyframes hidden{
+  0% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: hidden;
   }
 }
 

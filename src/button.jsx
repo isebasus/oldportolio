@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import injectSheet from 'react-jss';
 import { HashRouter as Router, Route, Switch, Link } from "react-router-dom";
+import Portfolio from '../App';
 
 const styles = {
     button: {
         transition: 'transform .1s',
-        visibility: 'hidden',
-    },
-    home:{
         background: 'linear-gradient(to right, #0cebeb, #20e3b2, #29ffc6)',
         color: '#F1F1F1',
         borderRadius: '100px',
@@ -16,6 +14,9 @@ const styles = {
         userSelect: 'none',
         textDecoration: 'none',
         animation: 'show 1s infinite',
+        marginLeft: '10px',
+        cursor: 'pointer'
+
     },
     animation: {
         textAlign: 'left',
@@ -43,17 +44,25 @@ const styles = {
 
 }
 
+class Button extends React.Component{
+    constructor(props) {
+        super(props);
+    };
 
-const Button = ({ subject, link }) => {
-    return(
+    click = () =>{
+        this.props.parentMethod();
+    }
+    render(subject) {
+        return(
         <div className="buttoncontainer" style = { styles.animation }>
-            <button style = { styles.button }type="button">
-                <Link className="homebutton" style = { styles.home }to={ link }>{ subject }</Link>
+            <button className="homebutton" style = { styles.button } type="button" onClick={this.click}>
+                Back to home page
             </button>
         </div>
-    )
+        )
+    }
 }
 
-const StyledButton = injectSheet(styles)(Button)
+const StyledButton = injectSheet(styles)(Button);
 
 export default StyledButton; 

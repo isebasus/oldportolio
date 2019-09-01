@@ -1,17 +1,23 @@
 import React, { Component } from 'react';
 import injectSheet from 'react-jss';
+import withStyles from "react-jss";
+import PropTypes from "prop-types";
 
 const styles = {
     box: {
-        marginTop: '16%',
         borderRadius: '15px',
+        textDecoration: 'none',
     },
     caption:{
-        position: 'relative'
+        position: 'relative',
+        textDecoration: 'none',
+        textRendering: 'optimizeLegibility',
     },
     header: {
         position: 'relative',
         lineHeight: '90%',
+        textDecoration: 'none',
+        textRendering: 'auto',
     },
     button: {
         background: 'linear-gradient(to right, #0cebeb, #20e3b2, #29ffc6)',
@@ -24,17 +30,13 @@ const styles = {
         animation: 'show 1s infinite',
         cursor: 'pointer',
         textTransform: 'uppercase',
-        padding: '1vw 1.5vw',
-        fontSize: '.84vw',
         letterSpacing: '0.2vw',
-        display: 'incline-block',
-        verticalAlign: 'middle'
+        verticalAlign: 'middle',
     },
     animation: {
-
-        textAlign: 'left',
         position: 'relative',
-        marginLeft: '500px'
+        textAlign: 'left',
+        marginLeft: '42%',
     },
     positioning: {
 
@@ -44,19 +46,22 @@ const styles = {
 
 const container = ({ header, caption}) => {
     return(
-            <div style = { styles.box }>
+            <div className="projectcontainer" style = { styles.box }>
                 <div style = { styles.header }>
                     <h1 className="header">{ header }</h1>
                 </div>
-                <div style = { styles.positioning }>
-                    <div style = { styles.animation }>
-                        <button style = { styles.button }type="button">
+                <div className="buttonlocation" style = { styles.animation }>
+                    <button className="projectbutton" style = { styles.button }type="button">
                         View Project
-                        </button>
-                    </div>
-                    <p className="caption" style = {styles.caption}>
-                        {caption}
-                    </p>
+                    </button>
+                </div>
+                <p className="caption" style = {styles.caption}>
+                    {caption}
+                </p>
+                <div style = { styles.animation }>
+                    <button className="responsivebutton" style = { styles.button }type="button">
+                        View Project
+                    </button>
                 </div>
             </div>
     )

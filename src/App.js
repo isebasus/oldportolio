@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
+import ProjectDescription from './components/description.jsx'
 import StyledButton from './components/button.jsx';
 import Header, {title} from './components/header.jsx';
 import Container, {header} from './components/projectContainers.jsx';
 import { HashRouter as Router, Route, Switch, Link} from "react-router-dom";
 import { createBrowserHistory } from 'history';
 import './App.css';
+
 
 function App() {
   return (
@@ -65,11 +67,12 @@ export class Portfolio extends React.Component{
             <p className="description">The following projects demonstrates the skills that I have performed through the technologies that I have used. You can also check out my github for more projects!</p>
           </div>
           <div className="positioning">
-            <Container header="Video Scraper" caption="A web proxy built for a more open web. Lorem ipsum dolor sit amet, consectetur adipiscing elit."></Container>
-            <Container header="Qwerty" caption="A web scraper that uses Youtube's API to retrieve the video."></Container>
-            <Container header ="isebas.us" caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. That this is the most academical thing."></Container>
+            <Container header="Video Scraper" caption="A web scraper that lets you search any video using Youtube's API."></Container>
+            <Container header="Qwerty" caption="A proxy server which allows the search of any website without the FBI seeing it."></Container>
+            <Container header ="isebas.us" caption="This website of course. If you want, just look at the source code..."></Container>
           </div>
         </div>
+        <ProjectDescription></ProjectDescription>
       </header>
     );
   }

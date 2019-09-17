@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import injectSheet from 'react-jss';
 import withStyles from "react-jss";
 import PropTypes from "prop-types";
+import projectDescription from './description';
+
+
 
 const styles = {
     box: {
@@ -38,11 +41,11 @@ const styles = {
         textAlign: 'left',
         marginLeft: '42%',
     },
-    positioning: {
-
-    }
-
 };
+
+const hello = () =>{
+    alert("hello");
+}
 
 const container = ({ header, caption}) => {
     return(
@@ -51,7 +54,7 @@ const container = ({ header, caption}) => {
                     <h1 className="header">{ header }</h1>
                 </div>
                 <div className="buttonlocation" style = { styles.animation }>
-                    <button className="projectbutton" style = { styles.button }type="button">
+                    <button className="projectbutton" style = { styles.button }type="button" onClick={hello}>
                         View Project
                     </button>
                 </div>

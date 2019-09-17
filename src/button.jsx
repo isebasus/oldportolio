@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import injectSheet from 'react-jss';
 import { HashRouter as Router, Route, Switch, Link } from "react-router-dom";
 import Portfolio from '../App';
+import withStyles from "react-jss";
+import PropTypes from "prop-types";
 
 const styles = {
     button: {
@@ -10,13 +12,12 @@ const styles = {
         color: '#F1F1F1',
         borderRadius: '100px',
         border: '0px', 
-        fontWeight: 700,
+        fontWeight: '600',
         userSelect: 'none',
         textDecoration: 'none',
         animation: 'show 1s infinite',
         marginLeft: '10px',
-        cursor: 'pointer'
-
+        cursor: 'pointer',
     },
     animation: {
         textAlign: 'left',
@@ -52,7 +53,7 @@ class Button extends React.Component{
     click = () =>{
         this.props.parentMethod();
     }
-    render(subject) {
+    render(){
         return(
         <div className="buttoncontainer" style = { styles.animation }>
             <button className="homebutton" style = { styles.button } type="button" onClick={this.click}>

@@ -18,13 +18,16 @@
 
 .homebutton{
     font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
+    font-size: 1vw;
     padding: 1rem 1.5rem;
+    transition: transform .4s ease; 
+    -webkit-transition: .1s ease;
 }
 
 .buttoncontainer{
   margin-top: -40px;
 }
+
 
 .button{
   transition: transform .1s;
@@ -51,6 +54,10 @@
   -webkit-font-smoothing: antialiased;
 }
 
+.projectDescription{
+  font-family: 'Montserrat', sans-serif;
+}
+
 .button:hover{
   -webkit-transform: translateY(-3px);
   -ms-transform: translateY(-3px);
@@ -68,6 +75,9 @@
   visibility: hidden;
 }
 
+.scraperBackground{
+  background-image: url(../src/images/videoScraper.jpeg);
+}
 
 .body{
   background-color: #F1F1F1;
@@ -81,7 +91,8 @@
   background-color: #F1F1F1;
   width: 100%;
   height: 100vh;
-  overflow-x: hidden;
+  overflow: hidden;
+  display: grid;
 }
 
 .header{
@@ -129,12 +140,28 @@
   padding: 1vw 1.5vw;
   font-size: .84vw;
   display: inline-block;
+  transition: transform .4s ease; 
+  -webkit-transition: .1s ease;
 }
 
 .responsivebutton{
   padding: 1vw 1.5vw;
   font-size: .84vw;
   display: none;
+  transition: transform .4s ease; 
+  -webkit-transition: .1s ease;
+}
+
+.projectbutton:hover, .responsivebutton:hover, .homebutton:hover{
+  -webkit-transform: scale(1.035);
+  -ms-transform: scale(1.035);
+  transform: scale(1.035);
+}
+
+.projectbutton:active, .responsivebutton:active, .homebutton:active{
+  -webkit-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
 }
 
 .projectHeader{
@@ -158,6 +185,16 @@
 
 .positioning{
   margin-top: -100px;
+}
+
+.bio{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.descriptionTitle{
+  font-family: 'Playfair Display', serif;
+  line-height: 100%;
+  font-stretch: expanded;
 }
 
 p{
@@ -289,8 +326,6 @@ h1{
   }
 
   .projectbutton{
-    font-size: 1.2vmax;
-    padding: 1rem 1.5rem;
     display: none;
   }
 
@@ -304,12 +339,12 @@ h1{
     font-size: 2.5vmax;
   }
 
-  .prjects{
-    margin-left: 5%;
+  .projects{
+    margin-left: 10%;
   }
 
   .homebutton{
-    font-size: 1.15vmax;
+    font-size: 1.2vmax;
     padding: 0.5rem 1rem;
   }
 
@@ -330,6 +365,10 @@ h1{
 
   .description{
     width: 300px;
+  }
+
+  .projects{
+    margin-left: 11%;
   }
 
   .projectHeader{

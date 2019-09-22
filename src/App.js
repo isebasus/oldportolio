@@ -50,10 +50,22 @@ class Home extends React.Component{
 export class Portfolio extends React.Component{
   constructor(props){
     super(props);
+
+    this.state = {
+      isShow: false,
+    };
+
   };
+
 
   buttonClick = () => {
     this.props.history.push('/')
+  };
+  toggleShow = () => {
+    this.setState(state => ({ isShow: !state.isShow}));
+  };
+  buttonExit = () => {
+    this.setState(state => ({isShow: !state.isShow}));
   }
 
   render(){
@@ -67,12 +79,12 @@ export class Portfolio extends React.Component{
             <p className="description">The following projects demonstrates the skills that I have performed through the technologies that I have used. You can also check out my github for more projects!</p>
           </div>
           <div className="positioning">
-            <Container header="Video Scraper" caption="A web scraper that lets you search any video using Youtube's API."></Container>
-            <Container header="Qwerty" caption="A proxy server which allows the search of any website without the FBI seeing it."></Container>
-            <Container header ="isebas.us" caption="This website of course. If you want, just look at the source code..."></Container>
+            <Container onClick={this.toggleShow} header="Video Scraper" caption="A web scraper that lets you search any video using Youtube's API."/>
+            <Container header="Qwerty" caption="A proxy server which allows the search of any website without the FBI seeing it."/>
+            <Container header ="isebas.us" caption="This website of course. If you want, just look at the source code..."/>
           </div>
         </div>
-        <ProjectDescription></ProjectDescription>
+        {this.state.isShow ? <ProjectDescription exit={this.buttonExit}>{this.props.children}</ProjectDescription> : null}
       </header>
     );
   }

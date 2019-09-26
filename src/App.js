@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ProjectDescription from './components/description.jsx'
+import ProjectDescription from './components/description.jsx';
 import StyledButton from './components/button.jsx';
 import Header, {title} from './components/header.jsx';
 import Container, {header} from './components/projectContainers.jsx';
@@ -7,6 +7,8 @@ import { HashRouter as Router, Route, Switch, Link} from "react-router-dom";
 import { createBrowserHistory } from 'history';
 import './App.css';
 
+const none = "none";
+const show = "flex";
 
 function App() {
   return (
@@ -50,23 +52,37 @@ class Home extends React.Component{
 export class Portfolio extends React.Component{
   constructor(props){
     super(props);
-
     this.state = {
-      isShow: false,
+      videoScraper: false,
+      Qwerty: false,
+      isebas: false,
     };
 
   };
 
-
   buttonClick = () => {
     this.props.history.push('/')
   };
-  toggleShow = () => {
-    this.setState(state => ({ isShow: !state.isShow}));
+  stateSet = (e, state) => {
+    switch(state) {
+      case this.state.videoScraper: 
+        this.setState({
+          videoScraper: !state
+        });
+      break;
+      case this.state.Qwerty:
+        this.setState({
+          Qwerty: !state
+        }); 
+      break;
+      case this.state.isebas:
+        this.setState({
+          isebas: !state
+        });
+      break;
+    }
+
   };
-  buttonExit = () => {
-    this.setState(state => ({isShow: !state.isShow}));
-  }
 
   render(){
     return (
@@ -79,12 +95,14 @@ export class Portfolio extends React.Component{
             <p className="description">The following projects demonstrates the skills that I have performed through the technologies that I have used. You can also check out my github for more projects!</p>
           </div>
           <div className="positioning">
-            <Container onClick={this.toggleShow} header="Video Scraper" caption="A web scraper that lets you search any video using Youtube's API."/>
-            <Container header="Qwerty" caption="A proxy server which allows the search of any website without the FBI seeing it."/>
-            <Container header ="isebas.us" caption="This website of course. If you want, just look at the source code..."/>
+            <Container onClick={() => this.stateSet(this, this.state.videoScraper)} header="Video Scraper" caption="A web scraper that lets you search any video using Youtube's API."/>
+            <Container onClick={() => this.stateSet(this, this.state.Qwerty)} header="Qwerty" caption="A proxy server which allows the search of any website without the FBI seeing it."/>
+            <Container onClick={() => this.stateSet(this, this.state.isebas)} header ="isebas.us" caption="This website of course. If you want, just look at the source code..."/>
           </div>
         </div>
-        {this.state.isShow ? <ProjectDescription exit={this.buttonExit}>{this.props.children}</ProjectDescription> : null}
+       <ProjectDescription click={() => this.stateSet(this, this.state.videoScraper)} visible={this.state.videoScraper}></ProjectDescription>
+       <ProjectDescription click={() => this.stateSet(this, this.state.Qwerty)} videoScraper={this.state.videoScraper}></ProjectDescription>
+       <ProjectDescription click={() => this.stateSet(this, this.state.isebas)} videoScraper={this.state.videoScraper}></ProjectDescription>
       </header>
     );
   }

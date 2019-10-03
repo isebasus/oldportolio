@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700');
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap');
 
 
 *:focus{
@@ -22,6 +22,27 @@
     padding: 1rem 1.5rem;
     transition: transform .4s ease; 
     -webkit-transition: .1s ease;
+}
+
+#component {
+  margin-top: 60px;
+  cursor: pointer;
+  position: absolute;
+  background: linear-gradient(to right, #0cebeb, #20e3b2, #29ffc6);
+  color: #F1F1F1;
+  border-radius: 7px;
+  border: 0px;
+  font-weight: 700;
+  user-select: none;
+  font-size: 15px;
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-transform: uppercase;
+  vertical-align: middle;
+  padding: 1rem 1.0rem;
+  font-size: 13px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .buttoncontainer{
@@ -79,6 +100,13 @@ h3{
   background-image: url(../src/images/videoScraper.jpeg);
 }
 
+.qwertyBackground{
+  background-image: url(../src/images/qwerty.png);
+}
+.isebasBackground{
+  background-image: url(../src/images/isebas.png);
+}
+
 .body{
   background-color: #F1F1F1;
   width: 100%;
@@ -106,6 +134,7 @@ h3{
 
 }
 
+
 .buttonlocation{
   margin-top: -150px;
 }
@@ -113,18 +142,18 @@ h3{
 .caption{
   font-family: 'Montserrat', sans-serif;
   font-size: 1.38vw;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 150%;
   text-align: left;
   margin-top: 50px;
-  margin-left: 16%;
+  margin-left: 17%;
   width: 40vw;
 }
 
 .projects{
   margin: 0 auto;
   width: 100%;
-  height: 2000px;
+  padding-bottom: 100px;
   padding-left: 0px;
   padding-top: 25px;
   margin-left: 15%;
@@ -133,14 +162,14 @@ h3{
 
 .dcontainer{
   width: 75%;
+  border-right: 1px solid rgba(0, 0, 0, 0.35);
 }
-.line{
+#line{
   left: 77%; 
   top: 275px;
-  height: 280px;
-  width: 1px;
   position: absolute;
 }
+
 .right{
   width: 21%;
   left: 79%;
@@ -213,6 +242,17 @@ h3{
   line-height: 100%;
   font-stretch: expanded;
 }
+
+#togglebox{
+  position: relative;
+  border-radius: 7px;
+  text-decoration: none;
+  background-color: #F1F1F1;
+  max-width: 800px;
+  margin: auto;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
 
 p{
   color: #000000;
@@ -288,13 +328,15 @@ h1{
     font-size: 7vh;
   }
 
-  .overlay{
-    padding: 30px 0;
+  #overlay{
+    padding: 0px 0;
+
   }  
   .dcontainer{
     width: 95%;
+    border: 0px;
   }
-  .line{
+  #line{
     top: 0px;
     left: 30px; 
     height: 1px;
@@ -472,5 +514,26 @@ h1{
     transform: translateY(0px);
     opacity: 1.0;
     visibility: visible;
+  }
+}
+@keyframes zoom{
+  0% { 
+      transform: scale(0.98);
+      opacity: 0.0;
+  }
+  100% {
+      transform: scale(1.0);
+      opacity: 1.0;
+  }
+}
+
+@keyframes zoom_out{
+  0% { 
+      transform: scale(1);
+      opacity: 1.0;
+  }
+  100% {
+      transform: scale(0.98);
+      opacity: 0.0;
   }
 }

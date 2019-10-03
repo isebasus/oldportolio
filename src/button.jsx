@@ -12,7 +12,7 @@ const styles = {
         color: '#F1F1F1',
         borderRadius: '100px',
         border: '0px', 
-        fontWeight: '600',
+        fontWeight: '500',
         userSelect: 'none',
         textDecoration: 'none',
         animation: 'show 1s infinite',
@@ -45,24 +45,17 @@ const styles = {
 
 }
 
-class Button extends React.Component{
-    constructor(props) {
-        super(props);
-    };
+const Button = ({click}) => {
 
-    click = () =>{
-        this.props.parentMethod();
-    }
-    render(){
-        return(
-        <div className="buttoncontainer" style = { styles.animation }>
-            <button className="homebutton" style = { styles.button } type="button" onClick={this.click}>
-                Back to home page
-            </button>
-        </div>
-        )
-    }
-}
+    return(
+    <div className="buttoncontainer" style = { styles.animation }>
+        <button className="homebutton" style = { styles.button } type="button" onClick={click}>
+            Back to home page
+        </button>
+    </div>
+    )
+};
+
 
 const StyledButton = injectSheet(styles)(Button);
 

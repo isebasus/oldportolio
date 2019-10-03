@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, forwardRef, useRef, useImperativeHandle  } from 'react';
 import injectSheet from 'react-jss';
 import withStyles from "react-jss";
 import PropTypes from "prop-types";
@@ -6,7 +6,6 @@ import PropTypes from "prop-types";
 const styles = {
     overlay: {
         position: 'fixed',
-        display: 'flex',
         width: '100%',
         height: '100%',
         zIndex: 100,
@@ -16,18 +15,7 @@ const styles = {
         alignItems: 'center',
         backgroundColor: 'rgba(0,0,0,0.75)',
         overflowY: 'auto',
-    },
-    box: {
-        position: 'relative',
-        borderRadius: '7px',
-        textDecoration: 'none',
-        backgroundColor: '#F1F1F1',
-        maxWidth: '800px',
-        margin: 'auto',
-        boxShadow: '0px 5px 10px rgba(0, 0, 0, 0.1)',
-        paddingBottom: '45px',
-        animation: 'fade_in 0.6s', 
-
+        display: 'flex'
     },
     image: {
         position: 'relative',
@@ -69,9 +57,11 @@ const styles = {
         textAlign: 'left'
     },
     container: {
-        paddingTop: '10px',
+        paddingTop: '0px',
+        marginTop: '24px',
         marginleft: '0',
-        position: 'relative'
+        paddingRight: '12px',
+        position: 'relative',
     },
     description: {
         color: 'black',
@@ -79,7 +69,7 @@ const styles = {
         marginLeft: '33px',
         fontWeight: 'normal',
         fontSize: '15px',
-        lineHeight: '21px'
+        lineHeight: '21px',
     },
     location: {
         position: 'relative',
@@ -110,13 +100,12 @@ const styles = {
     },
     right: {
         position: 'relative',
-        height: '280px',
         textAlign: 'left',
-        paddingTop: '10px',
+        paddingTop: '7px',
     },
     header: {
         color: 'black',
-        fontWeight: '700',
+        fontWeight: '500',
         fontSize: '16px',
         textAlign: 'left'
 
@@ -173,51 +162,58 @@ const styles = {
 
 };
 
-class description extends React.Component {
-    constructor(props) {
-        super(props);
-    };
 
-    click = () =>{
-        this.props.exit();
-    }
-    render(){
+const description = ({
+    onClick, title, caption, button, imageClass, padding, gitLink, website,
+    technology1, technology2, technology3, technology4, technology5,
+    type1, type2, type3, type4, type5,
+    }) =>  {
+
+
     return(
-        <div className="overlay" style = {styles.overlay}>
-            <div style = {styles.box}>
-                <div style = {styles.image} className="scraperBackground">
+        <div id="overlay" style = {styles.overlay}>
+            <div id="togglebox" style = {{ paddingBottom: `${padding}`, animation: 'fade_in 0.25s'}}>
+                <div style = {styles.image} className={imageClass}>
                     <div style = {styles.cover}>
                         <div style = {styles.wrapper}>
                             <div style = {styles.location}>
-                                <button style = {styles.button} onClick = {this.click}>
+                                <button style = {styles.button} onClick={onClick}>
                                 <i href="#" className="fa fa-close"></i> Close
                                 </button>
                             </div>
-                            <p className="descriptionTitle" style = {styles.title}>Video Scraper</p>
-                            <p className="bio" style = {styles.bio}>ThE BEst SeArCh EngIne</p>
+                            <p className="descriptionTitle" style = {styles.title}>{ title }</p>
+                            <p className="bio" style = {styles.bio}>{caption}</p>
                         </div>
                     </div>
                 </div>
-                <div  className="dcontainer" style = {styles.container}>
+                <div  id="leftdiv" className="dcontainer" style = {styles.container}>
                     <h3 style = {styles.description} className="projectDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sodales placerat lacus in efficitur. Mauris eu libero dictum, elementum mi id, ultrices mauris. Proin tincidunt, eros id feugiat efficitur, nibh ma. Proin tincidunt, eros id feugiat efficitur, nibh ma.</h3>
                     <h3 style = {styles.description} className="projectDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sodales placerat lacus in efficitur. Mauris eu libero dictum, elementum mi id, ultrices mauris. Proin tincidunt, eros id feugiat efficitur, nibh magna ornare massa, non pellentesque mauris diam ac justo.</h3>
                     <h3 style = {styles.description} className="projectDescription">Nunc sed neque id mi posuere tempus eget eget turpis. Aenean et erat imperdiet, luctus eros non, aliquet sem. Maecenas eu ex molestie, tempor risus non, posuere orci. Aenean imperdiet eros eu ligula ullamcorper ullamcorper. Nullam sed fringilla elit. Etiam facilisis id lectus.</h3>
+                    <h3 style = {styles.description} className="projectDescription"></h3>
+                    <h3 style = {styles.description} className="projectDescription"></h3>
                 </div>
-                <div className="line"style = {styles.line}>
+                <div id="line" style = {styles.line}>
                 </div>
-                <div className="right" style = {styles.right}>
+                <div className="right" style = {styles.right} id="rightdiv">
                     <h3 style = {styles.header}>Technologies</h3>
-                    <h3 style = {styles.technology}><i class="devicon-python-plain"></i> Python</h3>
-                    <h3 style = {styles.technology}><i class="devicon-html5-plain"></i> HTML5/CSS3</h3>
-                    <h3 style = {styles.technology}><i class="devicon-javascript-plain"></i> JavaScript</h3>
+                    <h3 style = {styles.technology}><i class={technology1}></i> {type1}</h3>
+                    <h3 style = {styles.technology}><i class={technology2}></i> {type2}</h3>
+                    <h3 style = {styles.technology}><i class={technology3}></i> {type3}</h3>
+                    <h3 style = {styles.technology}><i class={technology4}></i> {type4}</h3>
+                    <h3 style = {styles.technology}><i class={technology5}></i> {type5}</h3>
                     <h3 style = {styles.header}>Links</h3>
-                    <a href="https://github.com/ZumbaMaster313/YoutubeWebScraper">
+                    <a href={gitLink}>
                         <button className="link"style={styles.link}><i class="fas fa-link"></i> Github</button>
                     </a> 
+                    <a href={website}>
+                        {button}
+                    </a>
+                    
                 </div>
             </div>
         </div>
-    )}
+    )
 };
 
 const ProjectDescription = injectSheet(styles)(description);

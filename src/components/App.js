@@ -28,18 +28,15 @@ class Home extends React.Component{
   render(){
   return (
     <header className="body">
+      <meta name="viewport" content="width=device-width, initial-scale=0.75" />
       <div className="container">
-        <p>
-          <span className="first">Hello there.</span>
-          <span className="second"> I'm a human named</span>
-          <span className="third"> Sebastian.</span>
-          <span className="fourth"> Nice to meet you.</span>
-        </p>
-          <div className="buttonAnimation">
-            <button className="button" type="button" onClick={this.handleClick}>
-              View Portfolio
-            </button>
-          </div>
+        <p className="first">Hello, i'm Sebastian.</p>
+        <div className="links">
+          <a id="palm">🌴</a>
+          <a className="li" id="github" href="https://github.com/ZumbaMaster313">github</a>
+          <a className="li" id="email" href="mailto: isebasus@gmail.com">email</a>
+          <a className="li" id="portfolio" href="/portfolio">portfolio</a>
+        </div>
       </div>
     </header>
   );
@@ -70,6 +67,7 @@ export class Portfolio extends React.Component{
   render(){
     return (
       <header className="portfolio">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <div className="projects">
           <div className="title">
             <Header title="Portfolio"></Header>
